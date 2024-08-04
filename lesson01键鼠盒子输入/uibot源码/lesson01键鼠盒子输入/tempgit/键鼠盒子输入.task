@@ -1,0 +1,4 @@
+Import KeyAndMouseController
+
+Mouse.Action(@ui"输入控件<input>7","left","click",10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "simulate", "bMoveSmoothly": true})
+KeyAndMouseController.vm_input("1234")
