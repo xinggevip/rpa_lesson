@@ -1,0 +1,241 @@
+{
+    "id": "cbf5ce10-522b-11ef-8355-35a612304dd7",
+    "name": "lesson01键鼠盒子输入",
+    "type": "flow",
+    "build": "",
+    "version": "6.0.1.220629",
+    "flow": [
+        {
+            "id": "start",
+            "rect": {
+                "x": 680,
+                "y": 290,
+                "width": 140,
+                "height": 50
+            },
+            "type": "begin",
+            "next": {
+                "refId": "",
+                "vertices": []
+            },
+            "caption": "流程开始"
+        },
+        {
+            "type": "task",
+            "id": "cbf5f520-522b-11ef-8355-35a612304dd7",
+            "rect": {
+                "x": 1152,
+                "y": 283,
+                "width": 196,
+                "height": 64
+            },
+            "next": {
+                "refId": "",
+                "vertices": []
+            },
+            "exception": {
+                "refId": "",
+                "vertices": []
+            },
+            "file": "键鼠盒子输入.task",
+            "caption": "键鼠盒子输入",
+            "editorMode": "visual",
+            "breakpoints": {}
+        },
+        {
+            "type": "task",
+            "id": "35c841b7-b31c-4012-a42b-524582b57cc8",
+            "rect": {
+                "x": 910,
+                "y": 283,
+                "width": 196,
+                "height": 64
+            },
+            "caption": "RPA组件输入",
+            "next": {},
+            "exception": {},
+            "file": "RPA组件输入.task",
+            "editorMode": "visual",
+            "breakpoints": {}
+        }
+    ],
+    "variables": [
+        {
+            "type": "none",
+            "name": "g_temp",
+            "value": "null"
+        }
+    ],
+    "layout": {
+        "config": {
+            "global": {
+                "splitterSize": 1,
+                "splitterExtra": 8,
+                "enableEdgeDock": false,
+                "rootOrientationVertical": true,
+                "tabEnableClose": false,
+                "tabEnableRename": false,
+                "tabSetEnableDrag": false,
+                "tabSetEnableMaximize": false,
+                "tabSetMinWidth": 280,
+                "tabSetMinHeight": 200,
+                "borderBarSize": 24,
+                "borderAutoSelectTabWhenClosed": true,
+                "borderEnableAutoHide": true
+            },
+            "borders": [
+                {
+                    "type": "border",
+                    "selected": 0,
+                    "size": 250,
+                    "minSize": 250,
+                    "enableAutoHide": true,
+                    "location": "left",
+                    "children": [
+                        {
+                            "type": "tab",
+                            "id": "flow",
+                            "name": "流程",
+                            "component": "flowPanel",
+                            "config": {
+                                "i18nKey": "flow"
+                            }
+                        },
+                        {
+                            "type": "tab",
+                            "id": "command",
+                            "name": "命令",
+                            "component": "commandPanel",
+                            "config": {
+                                "i18nKey": "command"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "border",
+                    "selected": 0,
+                    "size": 280,
+                    "minSize": 280,
+                    "location": "right",
+                    "children": [
+                        {
+                            "type": "tab",
+                            "id": "commandProperty",
+                            "name": "属性",
+                            "component": "commandPropertyPanel",
+                            "config": {
+                                "i18nKey": "property"
+                            }
+                        },
+                        {
+                            "type": "tab",
+                            "id": "commandVariable",
+                            "name": "变量",
+                            "component": "commandVariablePanel",
+                            "config": {
+                                "i18nKey": "variable"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "layout": {
+                "type": "row",
+                "id": "body",
+                "children": [
+                    {
+                        "type": "tabset",
+                        "id": "#226aa295-7e61-4a03-9a95-e659eb38d4e6",
+                        "children": [
+                            {
+                                "type": "tab",
+                                "id": "cbf5ce10-522b-11ef-8355-35a612304dd7",
+                                "name": "lesson01键鼠盒子输入",
+                                "helpText": "E:\\project\\myself\\rpa\\uibot\\lesson\\lesson01模拟硬件输入\\lesson01模拟硬件输入\\main.prj",
+                                "component": "flowEditor",
+                                "config": {
+                                    "type": "project",
+                                    "id": "cbf5ce10-522b-11ef-8355-35a612304dd7"
+                                },
+                                "enableClose": false,
+                                "className": "flexlayout__tab_button_modify",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-flow.png"
+                            },
+                            {
+                                "type": "tab",
+                                "id": "cbf5f520-522b-11ef-8355-35a612304dd7",
+                                "name": "键鼠盒子输入",
+                                "helpText": "E:\\project\\myself\\rpa\\uibot\\lesson\\lesson01模拟硬件输入\\lesson01模拟硬件输入\\流程块.task",
+                                "component": "taskNodeEditor",
+                                "config": {
+                                    "selfControl": true,
+                                    "id": "cbf5f520-522b-11ef-8355-35a612304dd7",
+                                    "type": "task",
+                                    "selector": [
+                                        "cbf5f520-522b-11ef-8355-35a612304dd7"
+                                    ]
+                                },
+                                "enableClose": true,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-task.png"
+                            },
+                            {
+                                "type": "tab",
+                                "id": "35c841b7-b31c-4012-a42b-524582b57cc8",
+                                "name": "RPA组件输入",
+                                "helpText": "E:\\project\\myself\\rpa\\uibot\\lesson\\lesson01模拟硬件输入\\lesson01模拟硬件输入\\RPA组件输入.task",
+                                "component": "taskNodeEditor",
+                                "config": {
+                                    "selfControl": true,
+                                    "id": "35c841b7-b31c-4012-a42b-524582b57cc8",
+                                    "type": "task",
+                                    "selector": [
+                                        "35c841b7-b31c-4012-a42b-524582b57cc8"
+                                    ]
+                                },
+                                "enableClose": true,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-task.png"
+                            }
+                        ],
+                        "active": true
+                    },
+                    {
+                        "type": "tabset",
+                        "id": "buttom",
+                        "height": 200,
+                        "enableDrop": false,
+                        "enableDrag": false,
+                        "enableDivide": false,
+                        "enableClose": false,
+                        "minHeight": 32,
+                        "headerHeight": 32,
+                        "children": [
+                            {
+                                "type": "tab",
+                                "id": "output",
+                                "name": "输出",
+                                "component": "outputPanel",
+                                "config": {
+                                    "i18nKey": "output"
+                                },
+                                "enableDrag": false,
+                                "enableRenderOnDemand": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "type": "flow",
+        "version": "1.0.20"
+    },
+    "flowConfig": {
+        "scrollbarPosition": {
+            "left": 1575,
+            "top": 608
+        },
+        "zoom": 1
+    }
+}
