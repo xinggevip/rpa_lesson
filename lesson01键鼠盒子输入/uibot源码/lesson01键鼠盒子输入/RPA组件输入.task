@@ -1,3 +1,0 @@
-
-Keyboard.InputText(@ui"输入控件<input>6","123",true,20,10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 500, "bSetForeground": true, "sSimulate": "message", "bValidate": false, "bClickBeforeInput": false})
-Keyboard.InputText(@ui"输入控件<input>5","123",true,20,10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 500, "bSetForeground": true, "sSimulate": "simulate", "bValidate": false, "bClickBeforeInput": false})
