@@ -2,3 +2,4 @@
 /trash/**
 /temp/**
 **/*.lib/
+**/.idea/**
