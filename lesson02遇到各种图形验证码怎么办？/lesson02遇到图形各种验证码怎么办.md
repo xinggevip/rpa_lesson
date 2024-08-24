@@ -4,6 +4,7 @@
 
 日期：2024-08-21
 
+本节课视频地址：https://www.bilibili.com/video/BV1WuWYeJErG/?spm_id_from=333.999.0.0
 ## 描述
 登录过程中往往会遇到各种各样的验证码，让RPA机器人自动识别验证码成为了RPA开发者的必备技能
 
