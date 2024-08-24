@@ -2,7 +2,6 @@
 /trash/**
 /temp/**
 **/*.lib/
-**/.idea/
 **/__pycache__/
 **/log
 **/tempgit/
