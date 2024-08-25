@@ -1,9 +1,14 @@
-
+Dim hWeb
 Import Captcha
 
-img_path_1 = '''E:\project\myself\rpa\uibot\lesson\lesson02遇到各种验证码怎么办\res\data\英文数字验证码1.png'''
+If File.FileExists(@res"data") 
+    File.CreateFolder(@res"data")
+End If
+
+img_path_1 = @res"data" & '''\英文数字验证码1.png'''
 
 
+hWeb = WebBrowser.Create("chrome","http://www.ttshitu.com/login.html?spm=null",30000,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
 UiElement.ScreenCapture(img_path_1,@ui"图像<img>1",{"x":0,"y":0,"width":0,"height":0},{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
 res_1 = Captcha.alphanumeric_captcha(img_path_1)
 TracePrint(res_1)

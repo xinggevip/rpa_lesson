@@ -1,0 +1,63 @@
+
+Import Captcha
+
+If File.FileExists(@res"data") 
+    File.CreateFolder(@res"data")
+End If
+
+Dim fullbg_path = @res"data" & '''\01滑块验证码完整背景图.png'''
+Dim cutbg_path = @res"data" & '''\02滑块验证码带缺口背景图.png'''
+Dim moving_distance,hWeb
+
+
+hWeb = WebBrowser.Create("chrome","http://182.131.3.111:8000/noticerpt/user/popup_login",30000,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
+iRet = WebBrowser.WaitPage(hWeb,{},60000,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+Mouse.Action(@ui"链接<a>_×","left","click",10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "message", "bMoveSmoothly": false})
+Mouse.Action(@ui"文本<font>_×","left","click",10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "message", "bMoveSmoothly": false})
+Mouse.Action(@ui"链接<a>_工商联络员登录","left","click",10000,{"bContinueOnError": false, "iDelayAfter": 2000, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "simulate", "bMoveSmoothly": false})
+
+Rem 显示完整背景滑块验证码
+hWeb = WebBrowser.BindBrowser("chrome",10000,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+sRet = WebBrowser.RunJS(hWeb,"function(){;document.querySelector(\"div.gt_widget\").className = \"gt_widget gt_show\";return 123}",true,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+sRet = WebBrowser.RunJS(hWeb,"function(){document.querySelector(\"a.gt_fullbg\").className = \"gt_fullbg gt_show\";return 123}",true,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+
+UiElement.ScreenCapture(fullbg_path,@ui"块级元素<div>",{"x":0,"y":0,"width":0,"height":0},{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+Rem 显示带缺口滑块验证码
+sRet = WebBrowser.RunJS(hWeb,"function(){document.querySelector(\"a.gt_fullbg\").className = \"gt_fullbg gt_hide\";return 123}",true,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+
+Rem 隐藏缺口
+sRet = WebBrowser.RunJS(hWeb,"function(){document.querySelector(\"div.gt_slice\").className = \"gt_slice gt_hide\";return 123}",true,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+UiElement.ScreenCapture(cutbg_path,@ui"块级元素<div>",{"x":0,"y":0,"width":0,"height":0},{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+
+Rem 获取移动距离
+moving_distance = Captcha.calc_distance(fullbg_path,cutbg_path)
+TracePrint("移动距离： " & Cstr(moving_distance))
+
+Rem 拖动鼠标
+Mouse.Hover(@ui"块级元素<div>1",10000,{"bContinueOnError": false, "iDelayAfter": 1000, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "simulate", "bMoveSmoothly": true})
+
+Rem 无模拟人工拖动
+// objPoint=Mouse.GetPos()
+// Mouse.Click("left", "down", [],{"iDelayAfter": 300, "iDelayBefore": 300})
+// Mouse.Move(objPoint['x'] + moving_distance, objPoint['y'], false,{"iDelayAfter": 300, "iDelayBefore": 200})
+// Mouse.Click("left", "up", [],{"iDelayAfter": 300, "iDelayBefore": 300})
+
+Rem uibot模拟人工拖动
+Mouse.Click("left", "down", [])
+Delay(600)
+Dim 点列表=[]
+// 点列表=Captcha.generate_tracks(moving_distance)
+点列表=Captcha.generate_tracks(moving_distance)
+TracePrint(点列表)
+Dim 正向移动=点列表["forward_tracks"]
+Dim 回移=点列表["back_tracks"]
+For Each value In 正向移动
+    Mouse.Move(value, 0, true)
+Delay(12)
+Next
+For Each value In 回移
+    Mouse.Move(value, 0, true)
+Delay(34)
+Next
+Delay(200)
+Mouse.Click("left", "up", [])

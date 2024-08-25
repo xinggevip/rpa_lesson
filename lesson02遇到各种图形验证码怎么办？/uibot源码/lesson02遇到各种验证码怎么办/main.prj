@@ -39,23 +39,23 @@
             },
             "file": "英文数字验证码.task",
             "caption": "英文数字验证码",
-            "editorMode": "visual",
+            "editorMode": "sourceCode",
             "breakpoints": {}
         },
         {
             "type": "task",
             "id": "9046e41a-0b1f-4c5e-9044-b1c694c43162",
             "rect": {
-                "x": 1340,
-                "y": -37,
+                "x": 1325,
+                "y": 80,
                 "width": 196,
                 "height": 64
             },
-            "caption": "滑块验证码",
+            "caption": "滑块验证码1",
             "next": {},
             "exception": {},
-            "file": "滑块验证码.task",
-            "editorMode": "visual",
+            "file": "滑块验证码1.task",
+            "editorMode": "sourceCode",
             "breakpoints": {}
         },
         {
@@ -72,6 +72,22 @@
             "exception": {},
             "file": "点选验证码.task",
             "editorMode": "visual",
+            "breakpoints": {}
+        },
+        {
+            "type": "task",
+            "id": "090ede01-380d-4c2b-a764-725f51b188fb",
+            "rect": {
+                "x": 1325,
+                "y": -37,
+                "width": 196,
+                "height": 64
+            },
+            "caption": "滑块验证码",
+            "next": {},
+            "exception": {},
+            "file": "滑块验证码.task",
+            "editorMode": "sourceCode",
             "breakpoints": {}
         }
     ],
@@ -163,8 +179,8 @@
                     {
                         "type": "tabset",
                         "id": "#23aaa093-dd98-410f-b530-0d4118e5a42e",
-                        "weight": 139.27038626609442,
-                        "selected": 1,
+                        "weight": 121.65605095541402,
+                        "selected": 3,
                         "children": [
                             {
                                 "type": "tab",
@@ -197,6 +213,42 @@
                                 "enableClose": true,
                                 "className": "",
                                 "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-task.png"
+                            },
+                            {
+                                "type": "tab",
+                                "id": "9046e41a-0b1f-4c5e-9044-b1c694c43162",
+                                "name": "滑块验证码1",
+                                "helpText": "E:\\project\\myself\\rpa\\uibot\\github\\rpa_lesson\\lesson02遇到各种图形验证码怎么办？\\uibot源码\\lesson02遇到各种验证码怎么办\\滑块验证码.task",
+                                "component": "taskNodeEditor",
+                                "config": {
+                                    "selfControl": true,
+                                    "id": "9046e41a-0b1f-4c5e-9044-b1c694c43162",
+                                    "type": "task",
+                                    "selector": [
+                                        "9046e41a-0b1f-4c5e-9044-b1c694c43162"
+                                    ]
+                                },
+                                "enableClose": true,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-task.png"
+                            },
+                            {
+                                "type": "tab",
+                                "id": "090ede01-380d-4c2b-a764-725f51b188fb",
+                                "name": "滑块验证码",
+                                "helpText": "E:\\project\\myself\\rpa\\uibot\\github\\rpa_lesson\\lesson02遇到各种图形验证码怎么办？\\uibot源码\\lesson02遇到各种验证码怎么办\\滑块验证码.task",
+                                "component": "taskNodeEditor",
+                                "config": {
+                                    "selfControl": true,
+                                    "id": "090ede01-380d-4c2b-a764-725f51b188fb",
+                                    "type": "task",
+                                    "selector": [
+                                        "090ede01-380d-4c2b-a764-725f51b188fb"
+                                    ]
+                                },
+                                "enableClose": true,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-task.png"
                             }
                         ],
                         "active": true
@@ -204,8 +256,8 @@
                     {
                         "type": "tabset",
                         "id": "buttom",
-                        "weight": 60.72961373390558,
-                        "height": 283,
+                        "weight": 78.34394904458598,
+                        "height": 246,
                         "enableDrop": false,
                         "enableDrag": false,
                         "enableDivide": false,
@@ -234,8 +286,8 @@
     },
     "flowConfig": {
         "scrollbarPosition": {
-            "left": 1389,
-            "top": 261
+            "left": 1953,
+            "top": 860
         }
     }
 }

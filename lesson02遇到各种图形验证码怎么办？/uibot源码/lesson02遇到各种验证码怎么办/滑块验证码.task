@@ -1,0 +1,52 @@
+
+Import Captcha
+
+
+
+
+Dim full_bg_path = @res"data" & "\\01滑块验证码完整背景图.png"
+Dim cut_bg_path = @res"data" & "\\02滑块验证码带缺口背景图.png"
+
+If File.FileExists(@res"data") 
+    File.CreateFolder(@res"data")
+End If
+
+
+hWeb = WebBrowser.BindBrowser("chrome",10000,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+
+Rem 显示完整背景
+sRet = WebBrowser.RunJS(hWeb,"function(){document.querySelector(\"div.gt_widget\").className = \"gt_widget gt_show\";\ndocument.querySelector(\"a.gt_fullbg\").className = \"gt_fullbg gt_show\";return 123}",true,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+UiElement.ScreenCapture(full_bg_path,@ui"块级元素<div>2",{"x":0,"y":0,"width":0,"height":0},{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+
+sRet = WebBrowser.RunJS(hWeb,"function(){document.querySelector(\"div.gt_widget\").className = \"gt_widget gt_show\";\ndocument.querySelector(\"a.gt_fullbg\").className = \"gt_fullbg gt_hide\";\ndocument.querySelector(\"div.gt_slice\").className = \"gt_slice gt_hide\";return 123}",true,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+UiElement.ScreenCapture(cut_bg_path,@ui"块级元素<div>2",{"x":0,"y":0,"width":0,"height":0},{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+
+
+
+sRet = WebBrowser.RunJS(hWeb,"function(){document.querySelector(\"div.gt_widget\").className = \"gt_widget gt_show\";\ndocument.querySelector(\"a.gt_fullbg\").className = \"gt_fullbg gt_hide\";\ndocument.querySelector(\"div.gt_slice\").className = \"gt_slice gt_show\";return 123}",true,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+res = Captcha.calc_distance(full_bg_path, cut_bg_path)
+res = res - 7
+TracePrint(res)
+Mouse.Hover(@ui"块级元素<div>3",10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "simulate", "bMoveSmoothly": true})
+// objPoint=Mouse.GetPos()
+// Mouse.Click("left", "down", [],{"iDelayAfter": 300, "iDelayBefore": 300})
+// Mouse.Move(objPoint['x'] + res, objPoint['y'], false,{"iDelayAfter": 300, "iDelayBefore": 200})
+// Mouse.Click("left", "up", [],{"iDelayAfter": 300, "iDelayBefore": 300})
+
+Mouse.Click("left", "down", [])
+Delay(600)
+Dim 点列表=[]
+点列表=Captcha.generate_tracks(res)
+TracePrint(点列表)
+Dim 正向移动=点列表["forward_tracks"]
+Dim 回移=点列表["back_tracks"]
+For Each value In 正向移动
+    Mouse.Move(value, 0, true)
+Delay(12)
+Next
+For Each value In 回移
+    Mouse.Move(value, 0, true)
+Delay(34)
+Next
+Delay(200)
+Mouse.Click("left", "up", [])

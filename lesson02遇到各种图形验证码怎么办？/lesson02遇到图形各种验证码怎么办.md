@@ -25,6 +25,23 @@ pip install opencv-python -i https://pypi.mirrors.ustc.edu.cn/simple some-packag
 pip install ddddocr -i https://pypi.mirrors.ustc.edu.cn/simple some-package --target="RPA项目python目录"
 ```
 
-### 滑块验证码
+### 滑块验证码识别
+同样使用DDDDOCR
+
+滑块验证码识别的重点是何如拿到想要的图片，需要了解JavaScript操作网页元素属性相关知识
+
+案例
+```javascript
+// 显示隐藏验证码
+document.querySelector("div.gt_widget").className = "gt_widget gt_show";
+// 显示完整背景验证码
+document.querySelector("a.gt_fullbg").className = "gt_fullbg gt_show";
+// 显示带缺口背景
+document.querySelector("a.gt_fullbg").className = "gt_fullbg gt_hide";
+// 隐藏缺块
+document.querySelector("div.gt_slice").className = "gt_slice gt_hide";
+```
+
+
 
 ### 点选验证码
