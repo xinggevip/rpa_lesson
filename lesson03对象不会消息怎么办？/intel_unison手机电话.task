@@ -1,0 +1,15 @@
+Dim username = "a流量卡"
+
+Dim bRet
+Do While True
+    #icon("@res:325bddd0-63b0-11ef-94ac-c3fbd7667c15.png")
+    bRet = Image.Exists({"wnd":[{"cls":"Progman","title":"Program Manager","app":"explorer"}]},{"x": 0, "y": 0, "width": 0, "height": 0},@res"325bddd0-63b0-11ef-94ac-c3fbd7667c15.png",0.9,3000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sMatchType":"GrayMatch"})
+    If not  bRet
+        Keyboard.InputText(@ui"组框_搜索",username,true,20,10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 500, "bSetForeground": true, "sSimulate": "simulate", "bValidate": false, "bClickBeforeInput": false})
+        Mouse.Action(@ui"组框_a流量卡","left","click",10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "simulate", "bMoveSmoothly": false})
+
+        
+        Mouse.Action(@ui"按钮_拨号","left","click",10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "simulate", "bMoveSmoothly": false})
+    End If
+
+Loop

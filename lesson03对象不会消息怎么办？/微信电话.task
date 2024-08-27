@@ -1,0 +1,12 @@
+Dim bRet
+Do While True
+    // bRet = UiElement.Exists(@ui"文字_等待对方接受邀请.",{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+    #icon("@res:0418ea40-5fd1-11ef-b26a-3b48a5d9406e.png")
+bRet = Image.Exists({"wnd":[{"cls":"Progman","title":"Program Manager","app":"explorer"}]},{"x": 0, "y": 0, "width": 0, "height": 0},@res"0418ea40-5fd1-11ef-b26a-3b48a5d9406e.png",0.8,3000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sMatchType":"GrayMatch"})
+If not  bRet
+        
+        Mouse.Action(@ui"按钮_语音聊天","left","click",10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "simulate", "bMoveSmoothly": false})
+
+    End If
+
+Loop

@@ -1,0 +1,241 @@
+{
+    "id": "4359ead0-5fcf-11ef-b26a-3b48a5d9406e",
+    "name": "lesson03对象不会消息怎么办",
+    "type": "flow",
+    "build": "",
+    "version": "6.0.1.220629",
+    "flow": [
+        {
+            "id": "start",
+            "rect": {
+                "x": 800,
+                "y": 150,
+                "width": 140,
+                "height": 50
+            },
+            "type": "begin",
+            "next": {
+                "refId": "",
+                "vertices": []
+            },
+            "caption": "流程开始"
+        },
+        {
+            "type": "task",
+            "id": "435a11e0-5fcf-11ef-b26a-3b48a5d9406e",
+            "rect": {
+                "x": 800,
+                "y": 360,
+                "width": 196,
+                "height": 64
+            },
+            "next": {
+                "refId": "",
+                "vertices": []
+            },
+            "exception": {
+                "refId": "",
+                "vertices": []
+            },
+            "file": "intel_unison手机电话.task",
+            "caption": "intel_unison手机电话",
+            "editorMode": "visual",
+            "breakpoints": {}
+        },
+        {
+            "type": "task",
+            "id": "f7078093-501c-440a-94e5-51703a969266",
+            "rect": {
+                "x": 800,
+                "y": 250,
+                "width": 196,
+                "height": 64
+            },
+            "caption": "微信电话",
+            "next": {},
+            "exception": {},
+            "file": "微信电话.task",
+            "editorMode": "visual",
+            "breakpoints": {}
+        }
+    ],
+    "variables": [
+        {
+            "type": "none",
+            "name": "g_temp",
+            "value": "null"
+        }
+    ],
+    "layout": {
+        "config": {
+            "global": {
+                "splitterSize": 1,
+                "splitterExtra": 8,
+                "enableEdgeDock": false,
+                "rootOrientationVertical": true,
+                "tabEnableClose": false,
+                "tabEnableRename": false,
+                "tabSetEnableDrag": false,
+                "tabSetEnableMaximize": false,
+                "tabSetMinWidth": 280,
+                "tabSetMinHeight": 200,
+                "borderBarSize": 24,
+                "borderAutoSelectTabWhenClosed": true,
+                "borderEnableAutoHide": true
+            },
+            "borders": [
+                {
+                    "type": "border",
+                    "selected": 1,
+                    "size": 250,
+                    "minSize": 250,
+                    "enableAutoHide": true,
+                    "location": "left",
+                    "children": [
+                        {
+                            "type": "tab",
+                            "id": "flow",
+                            "name": "流程",
+                            "component": "flowPanel",
+                            "config": {
+                                "i18nKey": "flow"
+                            }
+                        },
+                        {
+                            "type": "tab",
+                            "id": "command",
+                            "name": "命令",
+                            "component": "commandPanel",
+                            "config": {
+                                "i18nKey": "command"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "border",
+                    "selected": 0,
+                    "size": 280,
+                    "minSize": 280,
+                    "location": "right",
+                    "children": [
+                        {
+                            "type": "tab",
+                            "id": "commandProperty",
+                            "name": "属性",
+                            "component": "commandPropertyPanel",
+                            "config": {
+                                "i18nKey": "property"
+                            }
+                        },
+                        {
+                            "type": "tab",
+                            "id": "commandVariable",
+                            "name": "变量",
+                            "component": "commandVariablePanel",
+                            "config": {
+                                "i18nKey": "variable"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "layout": {
+                "type": "row",
+                "id": "body",
+                "children": [
+                    {
+                        "type": "tabset",
+                        "id": "#2d4579ad-18b0-44d9-ae28-242de2fb4646",
+                        "selected": 2,
+                        "children": [
+                            {
+                                "type": "tab",
+                                "id": "4359ead0-5fcf-11ef-b26a-3b48a5d9406e",
+                                "name": "lesson03对象不会消息怎么办",
+                                "helpText": "C:\\Users\\Admin\\Documents\\UiBot\\creator\\Projects\\流程\\main.prj",
+                                "component": "flowEditor",
+                                "config": {
+                                    "type": "project",
+                                    "id": "4359ead0-5fcf-11ef-b26a-3b48a5d9406e"
+                                },
+                                "enableClose": false,
+                                "className": "flexlayout__tab_button_modify",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-flow.png"
+                            },
+                            {
+                                "type": "tab",
+                                "id": "435a11e0-5fcf-11ef-b26a-3b48a5d9406e",
+                                "name": "intel_unison手机电话",
+                                "helpText": "C:\\Users\\Admin\\Documents\\UiBot\\creator\\Projects\\流程\\流程块.task",
+                                "component": "taskNodeEditor",
+                                "config": {
+                                    "selfControl": true,
+                                    "id": "435a11e0-5fcf-11ef-b26a-3b48a5d9406e",
+                                    "type": "task",
+                                    "selector": [
+                                        "435a11e0-5fcf-11ef-b26a-3b48a5d9406e"
+                                    ]
+                                },
+                                "enableClose": true,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-task.png"
+                            },
+                            {
+                                "type": "tab",
+                                "id": "f7078093-501c-440a-94e5-51703a969266",
+                                "name": "微信电话",
+                                "helpText": "C:\\Users\\Admin\\Documents\\UiBot\\creator\\Projects\\流程\\流程块1.task",
+                                "component": "taskNodeEditor",
+                                "config": {
+                                    "selfControl": true,
+                                    "id": "f7078093-501c-440a-94e5-51703a969266",
+                                    "type": "task",
+                                    "selector": [
+                                        "f7078093-501c-440a-94e5-51703a969266"
+                                    ]
+                                },
+                                "enableClose": true,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-task.png"
+                            }
+                        ],
+                        "active": true
+                    },
+                    {
+                        "type": "tabset",
+                        "id": "buttom",
+                        "height": 200,
+                        "enableDrop": false,
+                        "enableDrag": false,
+                        "enableDivide": false,
+                        "enableClose": false,
+                        "minHeight": 32,
+                        "headerHeight": 32,
+                        "children": [
+                            {
+                                "type": "tab",
+                                "id": "output",
+                                "name": "输出",
+                                "component": "outputPanel",
+                                "config": {
+                                    "i18nKey": "output"
+                                },
+                                "enableDrag": false,
+                                "enableRenderOnDemand": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "type": "flow",
+        "version": "1.0.20"
+    },
+    "flowConfig": {
+        "scrollbarPosition": {
+            "left": 1250,
+            "top": 472
+        }
+    }
+}
